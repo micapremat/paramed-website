@@ -26,7 +26,6 @@
     "astro-seo": "^0.8.3",
     "sharp": "^0.33.4",
     "stackbit": "^0.0.0",
-    "tailwindcss": "^3.4.3",
-    "@stackbit/cms-git": "^1.0.0"
+    "tailwindcss": "^3.4.3"
   }
 }
