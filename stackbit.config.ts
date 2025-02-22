@@ -30,8 +30,8 @@ export default defineStackbitConfig({
         {
             name: "Post",
             type: "page",
-            urlPath: "/pages/blog/{slug}",
-            filePath: "pages/blog/{slug}.astro",
+            urlPath: "/pages/{slug}",
+            filePath: "pages/{slug}.astro",
             fields: [{ name: "title", type: "string", required: true }]
           },
       ],
