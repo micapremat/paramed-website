@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LoginForm from "../components/loginForm.astro";
+
+// if (Astro.locals.profile.success === true) {
+//   return Astro.redirect("/");
+// }
+
+const error = new URL(Astro.request.url).searchParams.get("error");
+---
+
+<Layout title="Login">
+  <div class={`max-w-xl mx-auto relative ${error === "true" ? "error-active" : ""}`}>
+    {
+      error === "true" && (
+        <div class="text-red-500 p-10 border-r-4 text-center mb-11 -mt-7">
+          <p>Error: Could not login. Please verify your credentials.</p>
+        </div>
+      )
+    }
+    <div class="bg-[#19232f] p-5 border-r-4 text-white">
+      <h1 class="mb-8">Login</h1>
+      <LoginForm />
+      <div class="text-[#757575] mt-10 text-sm">
+        <center>
+          <span>Email: user@example.com</span>
+          <span>Password: 1234</span>
+          <span>
+            by <a href="https://zastinian.com">Zastinian</a>, <a href="https://github.com/Zastinian/Astro-Login">Github Code</a>,{" "}
+            <a href="https://twitter.com/Zastinian">Twitter</a>.
+          </span>
+        </center>
+      </div>
+    </div>
+  </div>
+</Layout>
