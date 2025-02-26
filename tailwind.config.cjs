@@ -12,6 +12,18 @@ module.exports = {
           ...defaultTheme.fontFamily.sans,
         ],
       },
+      colors: {
+        // Add your custom colors here
+        'primary': '#0c365b',
+        'secondary': '#b62a2a',
+        'accent': '#ff7849',
+        'font-black': '#363636',
+        'custom-blue': '#1fb6ff',
+        'custom-pink': '#ff49db',
+        'custom-orange': '#ff7849',
+        'custom-green': '#13ce66',
+        'custom-gray': '#8492a6',
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

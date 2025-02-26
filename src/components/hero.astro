@@ -1,31 +1,30 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
+import paramed from "assets/paramed.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  class="grid lg:grid-cols-2 place-items-center pb-8 md:pb-12">
   <div class="py-6 md:order-1 hidden md:block">
     <Picture
-      src={heroImage}
+      src={paramed}
       alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
+      widths={[180, 380, 580]}
+      sizes="(max-width: 500px) 100vw, 620px"
       loading="eager"
       format="avif"
+      width={550}
     />
   </div>
   <div>
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      Instituto Superior de Carerras Paramedicas
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
-      create any website with this starter.
+      Dictamos carreras paramédicas con títulos oficiales y un enfoque práctico, respaldado por un equipo de profesionales de la salud con amplia experiencia.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
@@ -36,7 +35,7 @@ import { Icon } from "astro-icon/components";
         rel="noopener">
         <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
 
-         Download for Free
+         Ver carreras
       </Link>
       <Link
         size="lg"
@@ -46,8 +45,15 @@ import { Icon } from "astro-icon/components";
         class="flex gap-1 items-center justify-center"
         target="_blank">
         <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
+         Inscribirme
       </Link>
     </div>
   </div>
 </main>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  h1 {
+    font-family: "Roboto", serif;
+  }
+  </style>
+  
