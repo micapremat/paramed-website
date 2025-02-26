@@ -4,6 +4,11 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import Post from "../components/Post.astro"
+
+const allPosts = Object.values(
+    import.meta.glob("./posts/*.md", { eager: true }),
+);
 
 // Filter blog entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("blog", ({ data }) => {
@@ -25,6 +30,8 @@ publishedBlogEntries.sort(function (a, b) {
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
+      {allPosts.map((post: any) => <Post url={post.url} title={post.frontmatter.title}></Post>)}
+      dfsdf
       <ul class="grid gap-16 max-w-4xl mx-auto">
         {
           publishedBlogEntries.map((blogPostEntry, index) => (
@@ -68,6 +75,7 @@ publishedBlogEntries.sort(function (a, b) {
           ))
         }
       </ul>
+      
     </main>
   </Container>
 </Layout>

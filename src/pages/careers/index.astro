@@ -1,0 +1,163 @@
+---
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import iq from "assets/iq.jpg";
+import rx from "assets/rx.jpg";
+import hem from "assets/hem.jpg";
+import pdl from "assets/pdl.jpg";
+
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true })
+);
+---
+
+<Layout title='Blog'>
+  <Container>
+    <Sectionhead>
+      <Fragment slot='title'>Carreras</Fragment>
+      <Fragment slot='desc'>
+        We write about building startups and thoughts going on our mind.
+      </Fragment>
+    </Sectionhead>
+    <main class='mt-16'>
+      <ul class='grid gap-16 max-w-4xl mx-auto'>
+        <li>
+          <a href={`/careers/iq`}>
+            <div class='grid md:grid-cols-2 gap-5 md:gap-10 items-center'>
+              <Picture
+                src={iq}
+                alt='Intrumentación Quirúrgica'
+                width={800}
+                height={600}
+                class='w-full rounded-md object-cover object-center bg-white max-h-[300px] h-[250px]'
+              />
+              <div>
+                <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                 Técnico Superior
+                </span>
+                <h2
+                  class='text-3xl font-semibold leading-snug tracking-tight mt-1'>
+                  Instrumentación Quirúrgica
+                </h2>
+
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'> Duración: 3 años  </span>
+                </div>
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'>
+                    Como técnico en Instrumentación Quirúrgica brindará una
+                    atención directa y eficiente dentro del ámbito de su
+                    competencia al cirujano y le ayudará durante el acto
+                    quirúrgico. Aplicará los conocimientos científicos técnicos
+                    de la Instrumentación Quirúrgica. Tendrá una habilitación
+                    laboral en centros asistenciales oficiales y privados.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href={`/careers/iq`}>
+            <div class='grid md:grid-cols-2 gap-5 md:gap-10 items-center'>
+              <Picture
+                src={rx}
+                alt='Radiología'
+                width={800}
+                height={600}
+                class='w-full rounded-md object-cover object-center bg-white max-h-[300px] h-[250px]'
+              />
+              <div>
+                <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                  Técnico Superior
+                 </span>
+                <h2
+                  class='text-3xl font-semibold leading-snug tracking-tight mt-1'>
+                  Radiología
+                </h2>
+
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'> Duración: 3 años </span>
+                </div>
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'>
+                    Es el colaborador inmediato del profesional médico – radiólogo que se desempeña como auxiliar en todo lo concerniente a la obtención de radiografías y demás labores específicas de la radiología, radioterapia y el uso de modernas técnicas de diagnóstico por imagen.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href={`/careers/iq`}>
+            <div class='grid md:grid-cols-2 gap-5 md:gap-10 items-center'>
+              <Picture
+                src={hem}
+                alt='Hemoterapia'
+                width={800}
+                height={600}
+                class='w-full rounded-md object-cover object-center bg-white max-h-[300px] h-[250px]'
+              />
+              <div>
+                <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                  Técnico Superior
+                 </span>
+                <h2
+                  class='text-3xl font-semibold leading-snug tracking-tight mt-1'>
+                  Hemoterapia
+                </h2>
+
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'> Duración: 3 años  </span>
+                </div>
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'>
+                    Es un profesional Técnico especializado en realizar la extracción, preparación del producto sanguíneo y transfusión. Estará capacitado para el desarrollo de todo el proceso de hemodonación y atención del donante. Realiza la obtención de los productos, la compatibilidad sanguínea pretransfusional, la administración y monitoreo del hemocomponente indicado por el médico. Participa en la prevención de la enfermedad hemolítica perinatal.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href={`/careers/iq`}>
+            <div class='grid md:grid-cols-2 gap-5 md:gap-10 items-center'>
+              <Picture
+                src={pdl}
+                alt='Protésico Dental de Laboratorio'
+                width={800}
+                height={600}
+                class='w-full rounded-md object-cover object-center bg-white'
+              />
+              <div>
+                <span class="text-blue-400 uppercase tracking-wider text-sm font-medium max-h-[300px] h-[250px]">
+                  Curso
+                 </span>
+                <h2
+                  class='text-3xl font-semibold leading-snug tracking-tight mt-1'>
+                  Protésico Dental de Laboratorio
+                </h2>
+
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'> Duración: 2 años  </span>
+                </div>
+                <div class='flex gap-2 mt-3'>
+                  <span class='text-gray-400'>
+                    Como técnico en Instrumentación Quirúrgica brindará una
+                    atención directa y eficiente dentro del ámbito de su
+                    competencia al cirujano y le ayudará durante el acto
+                    quirúrgico. Aplicará los conocimientos científicos técnicos
+                    de la Instrumentación Quirúrgica. Tendrá una habilitación
+                    laboral en centros asistenciales oficiales y privados.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </Container>
+</Layout>
