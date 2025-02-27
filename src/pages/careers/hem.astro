@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+// Get the entry directly from the prop on render
+---
+
+<Layout title="title">
+  <Container>
+    <div class="mx-auto max-w-3xl mt-14">
+      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium ">
+        Técnico Superior
+      </span>
+      <h1
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight font-robot">
+        Hemoterapia
+      </h1>
+      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
+        <span class="text-gray-400">
+          ParaMED
+        </span>
+
+      </div>
+    </div>
+
+    <div class="mx-auto prose prose-lg mt-6 max-w-3xl font-robot">
+      <p>
+        El Técnico en <span class="font-bold">Hemoterapia</span>es un profesional de la salud especializado en el manejo de la sangre y sus componentes para su uso en transfusiones, tratamientos médicos y procedimientos de laboratorio. Su trabajo es fundamental en bancos de sangre, laboratorios clínicos y servicios de transfusión, asegurando la calidad y seguridad de los productos sanguíneos.
+      </p>
+      <h3>Funciones principales:</h3>
+      <ul>
+        <li>
+          <span class="font-bold">Extracción de sangre: </span> Realizar la colecta de sangre de donantes, siguiendo protocolos de seguridad y calidad.
+        </li>
+        <li>
+          <span class="font-bold">Procesamiento de la sangre: </span> Separar y preparar los componentes sanguíneos (como glóbulos rojos, plasma, plaquetas y crioprecipitados) para su almacenamiento o uso.
+        </li>
+        <li>
+          <span class="font-bold">Pruebas de compatibilidad: </span> Realizar pruebas de tipificación sanguínea y cruzamiento para asegurar la compatibilidad entre donante y receptor.
+        </li>
+        <li>
+          <span class="font-bold">Control de calidad: </span> Verificar que la sangre y sus componentes cumplan con los estándares de seguridad y calidad antes de su uso.
+        </li>
+        <li>
+          <span class="font-bold">Almacenamiento y conservación: </span>Gestionar el almacenamiento adecuado de la sangre y sus componentes, manteniendo las condiciones óptimas de temperatura y preservación.
+        </li>
+        <li>
+          <span class="font-bold">Atención al paciente: </span>Colaborar en la administración de transfusiones sanguíneas y monitorear al paciente durante el proceso.
+        </li>
+        <li>
+            <span class="font-bold">Registro y documentación: </span>Mantener registros precisos de las donaciones, pruebas y transfusiones realizadas.
+          </li>
+      </ul>      
+      
+    </div>
+    <div class="text-center mt-8">
+      <a
+        href="/careers"
+        class="bg-primary px-5 py-3 rounded-md text-font-white hover:bg-custom-blue transition"
+        >← Volver</a
+      >
+    </div>
+  </Container>
+</Layout>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  .font-robot {
+    font-family: "Roboto", serif;
+  }
+</style>
